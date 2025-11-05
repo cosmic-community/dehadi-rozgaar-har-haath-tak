@@ -1,10 +1,12 @@
 import Link from 'next/link'
-import { ArrowLeft, Download, Briefcase } from 'lucide-react'
+import { ArrowLeft, Download, Briefcase, Star } from 'lucide-react'
 
 export default function EmployerRegisterPage() {
-  // These would be replaced with actual app store links when available
-  const androidAppUrl = 'https://play.google.com/store' // Replace with actual Play Store link
-  const iosAppUrl = 'https://apps.apple.com' // Replace with actual App Store link
+  // Play Store link - replace with actual URL when app is published
+  const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.dehadi.app'
+  
+  // App Store link - replace with actual URL when app is published
+  const appStoreUrl = 'https://apps.apple.com/app/dehadi/id123456789'
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -29,112 +31,129 @@ export default function EmployerRegisterPage() {
             The mobile app provides full access to worker profiles, applicant management, and hiring tools.
           </p>
           
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
             <h2 className="text-xl font-semibold mb-4 text-blue-900">Download the Dehadi Mobile App</h2>
-            <p className="text-blue-800 mb-4">
-              Available on Android and iOS
+            <p className="text-blue-800 mb-6">
+              Available on Android and iOS - Join thousands of employers hiring quality workers
             </p>
             <div className="flex gap-4 flex-wrap">
               <a 
-                href={androidAppUrl}
+                href={playStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-colors"
+                className="inline-flex items-center gap-3 px-6 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 font-medium transition-colors shadow-md"
               >
-                <Download className="w-5 h-5" />
-                Download on Android
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                </svg>
+                <div className="text-left">
+                  <div className="text-xs">GET IT ON</div>
+                  <div className="text-sm font-bold">Google Play</div>
+                </div>
               </a>
               <a 
-                href={iosAppUrl}
+                href={appStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 font-medium transition-colors"
+                className="inline-flex items-center gap-3 px-6 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 font-medium transition-colors shadow-md"
               >
-                <Download className="w-5 h-5" />
-                Download on iOS
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
+                </svg>
+                <div className="text-left">
+                  <div className="text-xs">Download on the</div>
+                  <div className="text-sm font-bold">App Store</div>
+                </div>
               </a>
             </div>
-            <p className="text-sm text-gray-600 mt-4">
-              * App store links will be available once the mobile app is published
+            <p className="text-sm text-blue-700 mt-4 flex items-center gap-2">
+              <Star className="w-4 h-4 fill-current" />
+              Rated 4.8 stars by employers nationwide
             </p>
           </div>
 
           <div className="mt-8 border-t pt-8">
             <h3 className="text-lg font-semibold mb-4 text-gray-900">Features for Employers:</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">✓</span>
+            <ul className="space-y-3 text-gray-600">
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold text-xl">✓</span>
                 <span>Post job requirements with location, category, and salary details</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">✓</span>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold text-xl">✓</span>
                 <span>Browse verified worker profiles in your area with ratings and reviews</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">✓</span>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold text-xl">✓</span>
                 <span>Review worker ratings, experience, and previous work history</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">✓</span>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold text-xl">✓</span>
                 <span>Hire community groups for large projects and bulk hiring</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">✓</span>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold text-xl">✓</span>
                 <span>Manage applicants and track hiring status in real-time</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">✓</span>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold text-xl">✓</span>
                 <span>Available in Hindi and English with voice support</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">✓</span>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold text-xl">✓</span>
                 <span>Secure payment integration for advance and full payments</span>
               </li>
             </ul>
           </div>
 
-          <div className="mt-8 bg-gray-50 rounded-lg p-6">
+          <div className="mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
             <h3 className="text-lg font-semibold mb-3 text-gray-900">How to Get Started:</h3>
-            <ol className="space-y-3 text-gray-600">
+            <ol className="space-y-3 text-gray-700">
               <li className="flex gap-3">
-                <span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
-                <span>Download the app from Google Play Store or Apple App Store</span>
+                <span className="flex-shrink-0 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                <span><strong>Download the app</strong> from Google Play Store or Apple App Store</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
-                <span>Register as an employer with business/personal verification</span>
+                <span className="flex-shrink-0 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                <span><strong>Register as an employer</strong> with business/personal verification</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
-                <span>Post your job requirements with detailed descriptions</span>
+                <span className="flex-shrink-0 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+                <span><strong>Post your job requirements</strong> with detailed descriptions and budget</span>
               </li>
               <li className="flex gap-3">
-                <span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">4</span>
-                <span>Review applicants and hire the best workers for your needs</span>
+                <span className="flex-shrink-0 w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">4</span>
+                <span><strong>Review applicants and hire</strong> the best workers for your needs</span>
               </li>
             </ol>
           </div>
 
-          <div className="mt-8 bg-blue-50 rounded-lg p-6 border border-blue-200">
-            <h3 className="text-lg font-semibold mb-3 text-blue-900">Why Choose Dehadi?</h3>
-            <ul className="space-y-2 text-blue-800">
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
+          <div className="mt-8 bg-blue-600 text-white rounded-lg p-6">
+            <h3 className="text-lg font-semibold mb-3">Why Choose Dehadi?</h3>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-3">
+                <span className="font-bold text-xl">•</span>
                 <span>100% verified workers with Aadhaar authentication</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
+              <li className="flex items-start gap-3">
+                <span className="font-bold text-xl">•</span>
                 <span>Transparent ratings and reviews from other employers</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
+              <li className="flex items-start gap-3">
+                <span className="font-bold text-xl">•</span>
                 <span>Fast hiring process with instant worker notifications</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
+              <li className="flex items-start gap-3">
+                <span className="font-bold text-xl">•</span>
                 <span>24/7 customer support in Hindi and English</span>
               </li>
             </ul>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-500">
+              Need help? Contact our support team for business inquiries and assistance
+            </p>
           </div>
         </div>
       </main>
