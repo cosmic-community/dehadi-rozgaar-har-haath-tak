@@ -34,8 +34,12 @@ Collections:
 - Node.js 18.17.0 or higher
 - Firebase project with Firestore enabled
 - Cosmic CMS bucket
+- Flutter SDK (for mobile app development)
+- Android Studio (for Android app)
 
-### Environment Variables
+### Web Application Setup
+
+#### Environment Variables
 
 Create a `.env.local` file in the root directory:
 
@@ -51,7 +55,7 @@ FIREBASE_CLIENT_EMAIL=your-firebase-client-email
 FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nyour-firebase-private-key\n-----END PRIVATE KEY-----\n"
 ```
 
-### Installation
+#### Installation
 
 ```bash
 # Install dependencies
@@ -66,6 +70,68 @@ npm run build
 # Start production server
 npm start
 ```
+
+### Mobile App Setup
+
+#### Prerequisites
+- Flutter SDK installed (https://flutter.dev/docs/get-started/install)
+- Android Studio with Android SDK
+- Xcode (for iOS development on macOS)
+
+#### Flutter Environment Setup
+
+Create a `.env` file in the project root:
+
+```bash
+COSMIC_BUCKET_SLUG=your-bucket-slug
+COSMIC_READ_KEY=your-read-key
+FIREBASE_PROJECT_ID=your-firebase-project-id
+```
+
+#### Installation
+
+```bash
+# Get Flutter dependencies
+flutter pub get
+
+# Run on connected device/emulator
+flutter run
+
+# Build for Android
+flutter build apk --release
+
+# Build for iOS
+flutter build ios --release
+```
+
+#### Firebase Configuration
+
+1. Create a Firebase project at https://console.firebase.google.com
+2. Add Android app in Firebase Console
+3. Download `google-services.json` and place in `android/app/`
+4. Add iOS app in Firebase Console (for iOS support)
+5. Download `GoogleService-Info.plist` and place in `ios/Runner/`
+
+## Mobile App Deployment
+
+### Google Play Store Deployment
+
+For detailed instructions on deploying the mobile app to Google Play Store, see:
+📱 **[Play Store Deployment Guide](docs/PLAYSTORE_DEPLOYMENT.md)**
+
+Quick steps:
+1. Create Google Play Developer account ($25 one-time fee)
+2. Generate upload keystore for app signing
+3. Build release AAB: `flutter build appbundle --release`
+4. Create app listing in Play Console
+5. Upload AAB and submit for review
+
+### Apple App Store Deployment (Future)
+
+iOS deployment will require:
+- Apple Developer account ($99/year)
+- App Store Connect setup
+- App review process
 
 ## API Endpoints
 
@@ -112,10 +178,6 @@ npm start
 2. Add the Object Types from the repository (job-categories, community-groups)
 3. Add your bucket credentials to `.env.local`
 
-## Mobile App Setup
-
-See the Flutter mobile app documentation in the `/lib` directory for mobile-specific setup instructions.
-
 ## Features
 
 ### For Workers
@@ -140,8 +202,6 @@ See the Flutter mobile app documentation in the `/lib` directory for mobile-spec
 - **CMS**: Cosmic CMS
 - **Mobile**: Flutter, Firebase
 - **Authentication**: Firebase Auth (Phone)
-- **Hosting**: Vercel (recommended)
+- **Hosting**: Vercel (web), Google Play Store (mobile)
 
-## License
-
-Copyright © 2024 Dehadi. All rights reserved.
+## Project Structure

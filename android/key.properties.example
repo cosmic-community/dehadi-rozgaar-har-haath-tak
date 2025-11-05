@@ -1,0 +1,8 @@
+# android/key.properties.example
+# IMPORTANT: Copy this file to key.properties and add your actual keystore details
+# NEVER commit key.properties to version control - it contains sensitive information
+
+storePassword=YOUR_KEYSTORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=upload
+storeFile=../upload-keystore.jks

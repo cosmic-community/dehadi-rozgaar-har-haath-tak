@@ -33,3 +33,41 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Flutter/Dart/Android specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+*.lock
+
+# Android
+*.iml
+*.class
+.gradle
+local.properties
+.idea/
+*.apk
+*.ap_
+*.aab
+
+# CRITICAL: Never commit keystore files or key.properties
+android/key.properties
+android/upload-keystore.jks
+android/app/upload-keystore.jks
+*.keystore
+*.jks
+
+# iOS
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.hmap
+*.ipa
+*~.nib
+DerivedData/
+ios/Flutter/flutter_export_environment.sh
