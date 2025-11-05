@@ -91,3 +91,17 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+
+# Dependencies
+node_modules/
+
+# Production
+/dist
+
+# Vercel
+.vercel
