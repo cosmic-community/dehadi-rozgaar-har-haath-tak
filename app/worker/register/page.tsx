@@ -26,7 +26,7 @@ export default function WorkerRegisterPage() {
             <p className="text-blue-800 mb-4">
               Available on Android and iOS
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-wrap">
               <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium">
                 Download on Android
               </button>

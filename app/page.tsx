@@ -1,7 +1,20 @@
 import Link from 'next/link'
 import { Briefcase, Users, MapPin, Shield, CheckCircle } from 'lucide-react'
+import { getJobCategories } from '@/lib/cosmic'
 
-export default function HomePage() {
+export default async function HomePage() {
+  const categories = await getJobCategories()
+  
+  // Default categories if Cosmic CMS is not configured
+  const defaultCategories = [
+    'Mason', 'Painter', 'Carpenter', 'Mechanic',
+    'Electrician', 'Plumber', 'Cleaner', 'Repair'
+  ]
+  
+  const displayCategories = categories.length > 0 
+    ? categories.map(cat => cat.metadata.name_english)
+    : defaultCategories
+
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -37,7 +50,7 @@ export default function HomePage() {
           <p className="text-xl mb-8 text-blue-100">
             Connecting rural workers with employers across India
           </p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link 
               href="/worker/register" 
               className="px-8 py-3 bg-white text-blue-600 rounded-lg hover:bg-gray-100 font-semibold text-lg"
@@ -99,10 +112,7 @@ export default function HomePage() {
             Job Categories
           </h3>
           <div className="grid md:grid-cols-4 gap-6">
-            {[
-              'Mason', 'Painter', 'Carpenter', 'Mechanic',
-              'Electrician', 'Plumber', 'Cleaner', 'Repair'
-            ].map((category) => (
+            {displayCategories.map((category) => (
               <div key={category} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Briefcase className="w-6 h-6 text-blue-600" />
