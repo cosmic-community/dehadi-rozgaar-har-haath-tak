@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "prebuild": "bun run type-check"
+    "prebuild": "npm run type-check"
   },
   "dependencies": {
     "@cosmicjs/sdk": "^1.5.6",
